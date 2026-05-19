@@ -1,0 +1,28 @@
+{% load static %}
+<aside class="flex h-full w-72 flex-col bg-brown-900 border-r border-brown-700 px-6 py-8">
+  <div class="mb-10 flex flex-col items-center gap-3 text-center">
+    <div class="flex h-20 w-20 items-center justify-center rounded-3xl border border-brown-600 bg-brown-800 text-3xl font-black text-brewsko-300">BB</div>
+    <p class="text-sm uppercase tracking-[0.3em] text-warmgray-400">Admin Panel</p>
+  </div>
+
+  <nav class="space-y-2 text-sm font-medium text-warmgray-200">
+    <a href="{% url 'panel:dashboard' %}" class="flex items-center gap-3 rounded-3xl px-4 py-3 transition hover:bg-brown-800 {% if active_nav == 'dashboard' %}bg-brewsko-500 text-brown-950{% endif %}">
+      <span>⊞</span> Dashboard
+    </a>
+    <a href="{% url 'panel:menu' %}" class="flex items-center gap-3 rounded-3xl px-4 py-3 transition hover:bg-brown-800 {% if active_nav == 'menu' %}bg-brewsko-500 text-brown-950{% endif %}">
+      <span>≡</span> Manage Menu
+    </a>
+    <a href="{% url 'panel:inventory' %}" class="flex items-center gap-3 rounded-3xl px-4 py-3 transition hover:bg-brown-800 {% if active_nav == 'inventory' %}bg-brewsko-500 text-brown-950{% endif %}">
+      <span>⊙</span> Inventory
+    </a>
+    <a href="{% url 'panel:security' %}" class="flex items-center gap-3 rounded-3xl px-4 py-3 transition hover:bg-brown-800 {% if active_nav == 'security' %}bg-brewsko-500 text-brown-950{% endif %}">
+      <span>⊕</span> Security
+    </a>
+  </nav>
+
+  <div class="mt-auto pt-8">
+    <a href="{% url 'logout' %}" class="inline-flex w-full items-center justify-center gap-2 rounded-3xl border border-brown-600 bg-brown-800 px-4 py-3 text-sm text-warmgray-200 transition hover:border-brewsko-500 hover:text-brewsko-300">
+      <span>⇥</span> Logout
+    </a>
+  </div>
+</aside>
